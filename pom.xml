@@ -31,16 +31,10 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <junit.version>4.12</junit.version>
-        <mybatis.version>3.5.6</mybatis.version>
-        <jsp-api.version>2.2</jsp-api.version>
-        <servlet-api.version>4.0.1</servlet-api.version>
-        <mysql-connector.version>8.0.22</mysql-connector.version>
         <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
-        <jstl.version>1.2</jstl.version>
-        <fastjson.version>1.2.73</fastjson.version>
         <commons-jexl3.version>3.1</commons-jexl3.version>
-        <spring.version>5.2.10.RELEASE</spring.version>
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+        <lombok.version>1.18.16</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -53,31 +47,16 @@
                 <scope>test</scope>
             </dependency>
 
-            <!--spring-->
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+            <!--lombok-->
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <scope>provided</scope>
+                <version>${lombok.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-expression</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
+
+
 
             <!--spring-boot-->
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
@@ -91,50 +70,14 @@
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
-
-            <!--Java EE-->
-            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${servlet-api.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
-            <dependency>
-                <groupId>javax.servlet.jsp</groupId>
-                <artifactId>jsp-api</artifactId>
-                <version>${jsp-api.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>jstl</artifactId>
-                <version>${jstl.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring-boot.version}</version>
+                <!--该依赖不传递-->
+               <!-- <optional>true</optional>-->
             </dependency>
 
-            <!--database-->
-            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector.version}</version>
-            </dependency>
-
-            <!--fastjson-->
-            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
 
             <!--jexl-->
             <dependency>

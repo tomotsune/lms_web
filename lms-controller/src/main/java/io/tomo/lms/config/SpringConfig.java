@@ -1,5 +1,6 @@
 package io.tomo.lms.config;
 
+import io.tomo.lms.dao.UserDao;
 import io.tomo.lms.dao.impl.UserDaoImpl;
 import io.tomo.lms.service.UserService;
 import io.tomo.lms.service.impl.UserServiceImpl;
@@ -11,9 +12,12 @@ public class SpringConfig {
     //标注在方法上, 向容器中添加一个组件, 将方法的返回值添加到容器中.
     //方法名作为组件id.
     @Bean
+    public UserDao userDao(){
+        return new UserDaoImpl();
+    }
+
+    @Bean
     public UserService userService(){
-        UserServiceImpl userService=new UserServiceImpl();
-        userService.setUserDao(new UserDaoImpl());
-        return userService;
+        return new UserServiceImpl(userDao());
     }
 }

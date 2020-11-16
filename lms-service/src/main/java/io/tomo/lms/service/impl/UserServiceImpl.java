@@ -14,9 +14,10 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
-    public void setUserDao(UserDao userDao) {
+    public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
+
 
     @Override
     public User login(String id, String pwd) throws UserNotFoundException {

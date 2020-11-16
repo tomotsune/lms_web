@@ -27,16 +27,11 @@
       <artifactId>junit</artifactId>
     </dependency>
 
-    <!--database-->
-    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+    <!--lombok-->
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
     </dependency>
 
     <!--jexl-->
@@ -45,6 +40,7 @@
       <artifactId>commons-jexl3</artifactId>
     </dependency>
   </dependencies>
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
