@@ -11,15 +11,26 @@ import io.tomo.lms.entity.User;
 import io.tomo.lms.exception.BookNotFoundException;
 import io.tomo.lms.exception.TableNotFoundException;
 import io.tomo.lms.exception.UserNotFoundException;
-import io.tomo.lms.factory.ObjectFactory;
 import io.tomo.lms.service.ListService;
 
 import java.util.Date;
 
 public class ListServiceImpl implements ListService {
-    BookDao bookDao = (BookDao) ObjectFactory.getObject("bookDao");
-    UserDao userDao = (UserDao) ObjectFactory.getObject("userDao");
-    ListDao listDao = (ListDao) ObjectFactory.getObject("listDao");
+    private UserDao userDao;
+    private BookDao bookDao;
+    private ListDao listDao;
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void setBookDao(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+
+    public void setListDao(ListDao listDao) {
+        this.listDao = listDao;
+    }
 
     @Override
     public void lendBook(String id, int no, String op) throws BookNotFoundException, UserNotFoundException {

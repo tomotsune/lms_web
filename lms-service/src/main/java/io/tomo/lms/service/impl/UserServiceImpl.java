@@ -1,17 +1,22 @@
 package io.tomo.lms.service.impl;
 
 
+import io.tomo.lms.dao.BookDao;
+import io.tomo.lms.dao.ListDao;
 import io.tomo.lms.dao.UserDao;
 import io.tomo.lms.entity.User;
 import io.tomo.lms.exception.UserNotFoundException;
 import io.tomo.lms.exception.UsernameExistException;
-import io.tomo.lms.factory.ObjectFactory;
 import io.tomo.lms.service.UserService;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    UserDao userDao = (UserDao) ObjectFactory.getObject("userDao");
+    private UserDao userDao;
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public User login(String id, String pwd) throws UserNotFoundException {

@@ -1,16 +1,18 @@
 package io.tomo.lms.service.impl;
 
-
 import io.tomo.lms.dao.BookDao;
 import io.tomo.lms.entity.Book;
 import io.tomo.lms.exception.BookNotFoundException;
-import io.tomo.lms.factory.ObjectFactory;
 import io.tomo.lms.service.BookService;
 
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
-    BookDao bookDao = (BookDao) ObjectFactory.getObject("bookDao");
+    private BookDao bookDao;
+
+    public void setBookDao(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
 
     @Override
     public List<Book> findAll() {

@@ -7,10 +7,16 @@
         <groupId>io.tomo.lms</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+   <!-- <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.4.0</version>
+    </parent>-->
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lms-action</artifactId>
-    <packaging>war</packaging>
+    <!--打包方式, springBoot项目达成jar包即可-->
+    <packaging>jar</packaging>
 
     <name>lms-action Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
@@ -27,6 +33,29 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+
+        <!--spring-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
 
         <!--依赖service-->
         <dependency>

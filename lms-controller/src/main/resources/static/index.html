@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome!</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="content">
+    {{msg}}
+</div>
+</body>
+<script>
+    //配置是否允许vue-devtools检查代码, 方便调试, 生产环境中需要设置为false
+    Vue.config.devtools=true; //默认
+    Vue.config.productionTip=false;//阻止vue启动时生产消息
+    new Vue({
+        el:'#content',
+        data:{
+            msg:'hello world'
+        }
+    });
+</script>
+</html>

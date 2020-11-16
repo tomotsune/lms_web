@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的命名空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h2>success</h2>
+<!--使用th:text属性, 设置元素中的文本, 表达式${}可以获取作用域中的数据-->
+<!--    <div th:text="${name}"></div>
+    <div>[[${name}]] ..</div>
+    <p th:if="${name=='alice'}">..</p>-->
+<!--  <p th:switch="${role}">
+      <span th:case="admin">管理员</span>
+      <span th:case="reader">读者</span>
+      <span th:case="linaner">图书管理员</span>
+      <span th:case="*">其他</span>
+  </p>-->
+<ul>
+    <li th:each="name:${user}" th:text="${name}"></li>
+</ul>
+<h3>修改用户信息</h3>
+<form action="modify" method="post", th:object="${user_1}">
+    id: <input type="text" th:field="*{id}"><br>
+    pwd: <input type="text" th:field="*{pwd}">
+    <input type="submit" value="修改">
+</form>
+<!--引入templates/include/header.html中的fragment=head的代码片段-->
+<div th:include="include/header.html::head"></div><!--保留自己的标签, 不要片段中的-->
+<div th:insert="include/header.html::head"></div> <!--都保留-->
+<div th:replace="include/header.html::head"></div><!--替换-->
+<div th:text="${#dates.format(#dates.createNow(),'yyyy-MM-dd HH:mm:ss')}"></div>
+
+<a href="" th:href="@{/findUser(id=${user_1.id})}">查询指定用户信息</a>
+
+<input type="radio" name="sex" value="male" th:checked="${user_1.pwd eq '000'}">空密码
+
+<div th:if="${user_1.name==null}">未设置用户名</div>
+
+<script th:src="@{/js/common.js}"></script>
+</body>
+</html>
