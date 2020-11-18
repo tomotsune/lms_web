@@ -35,6 +35,12 @@
         <commons-jexl3.version>3.1</commons-jexl3.version>
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
         <lombok.version>1.18.16</lombok.version>
+        <vue.version>2.6.12</vue.version>
+        <webjars-locator.version>0.40</webjars-locator.version>
+        <bootstrap.version>4.5.3</bootstrap.version>
+        <jquery.version>3.5.1</jquery.version>
+        <axios.version>0.21.0</axios.version>
+        <animate.css.version>3.7.2</animate.css.version>
     </properties>
 
     <dependencyManagement>
@@ -78,13 +84,51 @@
                <!-- <optional>true</optional>-->
             </dependency>
 
-
             <!--jexl-->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-jexl3</artifactId>
                 <version>${commons-jexl3.version}</version>
             </dependency>
+
+            <!--web-->
+            <!-- https://mvnrepository.com/artifact/org.webjars/webjars-locator -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>webjars-locator</artifactId>
+                <version>${webjars-locator.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>jquery</artifactId>
+                <version>${jquery.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>bootstrap</artifactId>
+                <version>${bootstrap.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.webjars.npm/vue -->
+            <dependency>
+                <groupId>org.webjars.npm</groupId>
+                <artifactId>vue</artifactId>
+                <version>${vue.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.webjars.npm/axios -->
+            <dependency>
+                <groupId>org.webjars.npm</groupId>
+                <artifactId>axios</artifactId>
+                <version>${axios.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.webjars/animate.css -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>animate.css</artifactId>
+                <version>${animate.css.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
